@@ -6,3 +6,5 @@ venv
 .idea/misc.xml
 .idea/modules.xml
 .idea/vcs.xml
+.idea/codeStyles/
+.idea/saveactions_settings.xml
