@@ -56,7 +56,7 @@ def calc_matrix_product():
     return np.dot(a, b)
 
 
-def calc_neurons_batched_samples():
+def calc_layer_batched_samples():
     weights = [[0.2, 0.8, -0.5, 1.0],
                [0.5, -0.91, 0.26, -0.5],
                [-0.26, -0.27, 0.17, 0.87]]
