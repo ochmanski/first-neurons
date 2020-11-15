@@ -6,7 +6,7 @@ batched_inputs = [[1.0, 2.0, 3.0, 2.5],
                   [-1.5, 2.7, 3.3, -0.8]]
 
 
-def np_calc_neuron():
+def calc_neuron():
     weights = [0.2, 0.8, -0.5, 1.0]
     bias = 2.0
 
@@ -15,7 +15,7 @@ def np_calc_neuron():
     return outputs
 
 
-def simple_calc_neurons():
+def raw_calc_neurons():
     weights = [[0.2, 0.8, -0.5, 1],
                [0.5, -0.91, 0.26, -0.5],
                [-0.26, -0.27, 0.17, 0.87]]
@@ -35,7 +35,7 @@ def simple_calc_neurons():
     return layer_outputs
 
 
-def np_calc_neurons():
+def calc_neurons():
     weights = [[0.2, 0.8, -0.5, 1],
                [0.5, -0.91, 0.26, -0.5],
                [-0.26, -0.27, 0.17, 0.87]]
@@ -46,7 +46,7 @@ def np_calc_neurons():
     return layer_outputs
 
 
-def np_calc_matrix_product():
+def calc_matrix_product():
     a = [1, 2, 3]
     b = [2, 3, 4]
 
@@ -56,7 +56,7 @@ def np_calc_matrix_product():
     return np.dot(a, b)
 
 
-def np_calc_neurons_batched_samples():
+def calc_neurons_batched_samples():
     weights = [[0.2, 0.8, -0.5, 1.0],
                [0.5, -0.91, 0.26, -0.5],
                [-0.26, -0.27, 0.17, 0.87]]
@@ -65,11 +65,3 @@ def np_calc_neurons_batched_samples():
     layer_outputs = np.dot(batched_inputs, np.array(weights).T) + biases
 
     return layer_outputs
-
-
-if __name__ == '__main__':
-    print(np_calc_neuron())
-    print(simple_calc_neurons())
-    print(np_calc_neurons())
-    print(np_calc_matrix_product())
-    print(np_calc_neurons_batched_samples())

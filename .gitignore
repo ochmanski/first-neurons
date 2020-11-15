@@ -1,10 +1,4 @@
 venv
 .DS_Store
-.idea/.gitignore
-.idea/first-neurons.iml
-.idea/inspectionProfiles/
-.idea/misc.xml
-.idea/modules.xml
-.idea/vcs.xml
-.idea/codeStyles/
-.idea/saveactions_settings.xml
+.idea
+__pycache__
