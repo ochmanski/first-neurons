@@ -8,6 +8,7 @@ authors = ["ochdev <contact@och.dev>"]
 python = "^3.8.5"
 numpy = "1.18.5"
 matplotlib = "^3.3.3"
+nnfs = "^0.5.1"
 
 [tool.poetry.dev-dependencies]
 
