@@ -29,7 +29,7 @@ def calc_two_layers_batched_samples():
     return layer2_outputs
 
 
-def calc_three_layers_batched_samples(x_data):
+def calc_one_layer_entity_batched_samples(x_data):
     layer_dense = LayerDense(2, 3)
 
     layer_dense.forward(x_data)
