@@ -17,13 +17,6 @@ weights2 = [[0.1, -0.14, 0.5],
             [-0.44, 0.73, -0.13]]
 biases2 = [-1, 2, -0.5]
 
-# For each value in a vector, calculate the exponential value
-exp_values = np.exp(inputs)
-
-# Now normalize values
-probabilities = exp_values / np.sum(exp_values, axis=1, keepdims=True)
-print(probabilities)
-
 
 # We essentially have:
 # 4 neurons on input layer
