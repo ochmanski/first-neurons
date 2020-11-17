@@ -1,5 +1,6 @@
 import numpy as np
 
+import first_neurons.activation_functions as activation_functions
 from first_neurons.Layer_Dense import LayerDense
 
 inputs = [[1, 2, 3, 2.5],
@@ -16,6 +17,13 @@ weights2 = [[0.1, -0.14, 0.5],
             [-0.44, 0.73, -0.13]]
 biases2 = [-1, 2, -0.5]
 
+# For each value in a vector, calculate the exponential value
+exp_values = np.exp(inputs)
+
+# Now normalize values
+probabilities = exp_values / np.sum(exp_values, axis=1, keepdims=True)
+print(probabilities)
+
 
 # We essentially have:
 # 4 neurons on input layer
@@ -30,8 +38,23 @@ def calc_two_layers_batched_samples():
 
 
 def calc_one_layer_entity_batched_samples(x_data):
-    layer_dense = LayerDense(2, 3)
+    layer_dense1 = LayerDense(2, 3)
+    layer_dense2 = LayerDense(3, 3)
 
-    layer_dense.forward(x_data)
+    relu = activation_functions.ReLU()
+    softmax = activation_functions.Softmax()
 
-    return layer_dense.output
+    # First pass through our first layer (input layer not included, as it does not transform the data)
+    layer_dense1.forward(x_data)
+
+    # Pass through ReLU to (hopefully) fit some nonlinear function
+    relu.forward(layer_dense1.output)
+
+    # Pass through second layer (output layer in this case)
+    layer_dense2.forward(relu.output)
+
+    # Make predictions with normalised exponential values from previous layer
+    # Do we need to make sure that values passed here are not bigger than 1000 to avoid overflow and dead neurons?
+    softmax.forward(layer_dense2.output)
+
+    return softmax.output
