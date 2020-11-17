@@ -15,6 +15,6 @@ plt.scatter(X[:, 0], X[:, 1], c=y, cmap='brg')
 if __name__ == '__main__':
     print(single_layer.calc_layer_batched_samples())
     print(many_layers.calc_two_layers_batched_samples())
-    print(many_layers.calc_one_layer_entity_batched_samples(X)[:5])
+    print(many_layers.calc_two_layers_entity_batched_samples(X)[:5])
 
     # plt.show()
